@@ -5,7 +5,7 @@ my vk: milfucker2002
 I will post the labs that I have already passed  
 There will be no lab 11 for TP  
   
-How to open TP labs?
+How to open labs?
 ===================  
 1.download ZIP and unpack in folder  
 2.open Intellij Idea  
