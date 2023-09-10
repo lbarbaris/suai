@@ -1,4 +1,4 @@
-This is my repository for students of SUAI 
+This is my repository for my labs of SUAI 
 ==============
 my vk: milfucker2002 
 =================
