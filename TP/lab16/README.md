@@ -1,25 +1,30 @@
 # servlet-2
 Prerequirements
 ===============
-Tomcat is installed. See servlet-1 for details.
+Задание 16. Javascript.
+Разработать сервлет, который показывает двухуровневый список. Список загружается из текстового файла на сервере, который имеет следующий формат:
+* Звери
+    * Волк
+    * Корова
+* Птицы
+    * Курица
+    * Орел
+    * Попугай
 
-Configure Tomcat
-=================
-1. copy files from this repository to /home/user/apache-tomcat-6.0.47/webapps/
-2. copy /home/user/apache-tomcat-6.0.47/webapps/servlet-2/tomcat-users.xml to /home/user/apache-tomcat-6.0.47/conf (overwrite existing file)
-3. run Tomcat (See servlet-1 for details)
-4. go to http://localhost:8080/manager/html/  (login:tomcat password:tomcat)
-5. manage your servlets (stop, start, reload etc)
+Элементов первого и второго уровня может быть произвольное количество. Элементы списков второго уровня смещены на 4 пробела вправо. 
 
-Create second servlet
-====================
-1. copy files from this repository to /home/user/apache-tomcat-6.0.47/webapps/
-2. cd /home/user/apache-tomcat-6.0.47/webapps/servlet-2
-3. comile servlet: javac -cp ../../lib/servlet-api.jar:src/ src/*.java -d WEB-INF/classes
-4. reload your servlet using manager (see "Configure Tomcat")
-5. go to: http://localhost:8080/servlet-2/servlet/Testing
+Реализовать интерфейс для удобной работы со списком на javascript (js). При выводе в виде html список верхнего уровня становится нумерованным. Около каждого элемента первого уровня выводится символ, при нажатии на который скрываются или показываются элементы соответствующего списка второго уровня. Если список второго уровня показан, то выводится символ "-", позволяющий скрыть список. Если список второго уровня скрыт, то выводится символ "+", позволяющий показать список.
 
-Read
-====
-1. src/TestingServlet.java and src/Names.java (put attention on synchronized)
-2. WEB-INF/web.xml (put attention on * in <url-pattern>)
+Исходное состояние:
+1. Звери [+]
+2. Птицы [+]
+
+Состояние после нажатие на "+" около пункта Птицы:
+1. Звери [+]
+2. Птицы [-]
+    * Курица
+    * Орел
+    * Попугай
+
+
+При скрытии и показе списка не должно быть запросов на сервер. Графический интерфейс обеспечивает программа на js, выполняющаяся внутри браузера.
